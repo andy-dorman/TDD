@@ -27,86 +27,151 @@
 				<section>
 					<h1>Test Driven Development</h1>
 				</section>
+
 				<section>
 					<h2>Wikipedia says:</h2>
 					<p>Test-driven development (TDD) is a software development process that relies on the repetition
 					of a very short development cycle.</p>
+					<ul>
+						<li class="fragment">Requirements are turned into very specific test cases.</li>
+						<li class="fragment">The software is improved to pass the new tests, only.</li>
+					</ul>
+				</section>
 
-					<ul>
-						<li>Requirements are turned into very specific test cases.</li>
-						<li>The software is improved to pass the new tests, only.</li>
-					</ul>
-					<p>This is opposed to software development that allows software to be added that is not proven to meet requirements.</p>
-				</section>
 				<section>
-					<h2>If there is any ambiguity in the requirements of the ticket</h2>
+					<h2>Benefits</h2>
 					<ul>
-						<li>The ticket may not have met the definition of ready.</li>
-						<li>The ticket needs more analyzing.</li>
+						<li>Tickets should become more clear. By the end of analysis the tickets should have unambiguous requirements.</li>
+						<li class="fragment">Tests should cover the requirements of the ticket, and not potentially buggy current functionality.</li>
+						<li class="fragment">After the tests are written, if the ticket needs to go back to next, another developer could write the code to fix the tests, and pass all requirements of the ticket.</li>
+						<li class="fragment">The tests will explain our thought process, will aid clarity to other members of the team.</li>
 					</ul>
-					<p>It is very important to ask as many questions as you need until the ticket makes sense.</p>
 				</section>
+
 				<section>
-					<h2>During Analysis</h2>
+					<h2>More Benefits</h2>
 					<ul>
-						<li>If the ticket doesn't have a set of requirements in the description, add them.</li>
-						<li>Make sure that the requirements include different scenarios if needed.</li>
-						<li>If you don't think that a requirement can be easily translated into a unit test, rewrite it.</li>
-						<li>If you have added more requirements, get agreement that the requirements you have added are in scope. If not in scope, a new ticket is needed.</li>
+						<li>QA can be involved from the start of the ticket, to catch areas the Devs have missed.</li>
+						<li class="fragment">Less feature creep. If a dev feels the need to add more tests after analysis, we should be checking whether the extra work is out of scope.</li>
+						<li class="fragment">For QAs: We get evidence that the requirements for a ticket are tested and fulfilled.</li>
+						<li class="fragment">Communication between ticket owner, dev and QA throughout the life of the ticket.</li>
 					</ul>
 				</section>
+
+				<section>
+					<h1>TDD in Practice</h1>
+				</section>
+
+				<section>
+					<h2>Analysis</h2>
+					<ul>
+						<li>If the ticket has some ambiguity, check whether the ticket is ready. If it is, remove all ambiguity during analysis.</li>
+						<li class="fragment">If the ticket doesn't have a set of requirements in the description, add them.</li>
+						<li class="fragment">Make sure that the requirements include different scenarios if needed.</li>
+						<li class="fragment">If you don't think that a requirement can be easily translated into a unit test, rewrite it.</li>
+						<li class="fragment">If you have added more requirements, get agreement that the requirements you have added are in scope. If not in scope, a new ticket is needed.</li>
+					</ul>
+				</section>
+
 				<section>
 					<h2>Writing tests</h2>
 					<ul>
 						<li>Start small.</li>
-						<li>Only write tests that help you meet the agreed requirements.</li>
-						<li>Write the tests before writing any code.</li>
-						<li>Write tests that fail, and then write code to make the tests pass.</li>
-						<li>Focus on fixing one test at a time.</li>
+						<li class="fragment">Only write tests that help you meet the agreed requirements.</li>
+						<li class="fragment">Write the tests before writing any code.</li>
+						<li class="fragment">Write tests that fail, and then write code to make the tests pass.</li>
+						<li class="fragment">It's okay to have lots of failing tests before writing any code.</li>
+						<li class="fragment">When you are fixing the tests, focus on fixing one test at a time. Keep previous tests running when you are fixing a new test.</li>
 					</ul>
 				</section>
+
 				<section>
 					<h1>Example: Buffalo</h1>
 					<p>We are writing code to help people play a drinking game called Buffalo. The rules:</p>
 					<ul>
-						<li>Imagine an analogue clock. If the minute hand is on the right hand side of the clock, between 0 and 29 minutes, drink with your right hand.</li>
-						<li>If the minute hand of the analogue clock is on the left side, between 30 - 59 minutes, drink with your left hand.</li>
-						<li>If you are caught drinking with the wrong hand, bad things happen.</li>
+						<li class="fragment">Imagine an analogue clock. If the minute hand is on the right hand side of the clock, between 0 and 29 minutes, drink with your right hand.</li>
+						<li class="fragment">If the minute hand of the analogue clock is on the left side, between 30 - 59 minutes, drink with your left hand.</li>
+						<li class="fragment">If you are caught drinking with the wrong hand, bad things happen.</li>
 					</ul>
 				</section>
+
 				<section>
 					<h2>Requirements</h2>
 					<div>We want a method called buffalo that takes a number between 0 and 59, and returns either the word 'right' or 'left' depending on the number's value</div>
 					<ul>
-						<li>If the number is between 0 and 29, return 'right'</li>
-						<li>If the number is between 30 and 59, return 'left'</li>
-						<li>If the number is less than 0 or greater than 59, return nothing</li>
+						<li class="fragment">If the number is between 0 and 29, return 'right'</li>
+						<li class="fragment">If the number is between 30 and 59, return 'left'</li>
+						<li class="fragment">If the number is less than 0 or greater than 59, return nothing</li>
 					</ul>
 				</section>
+
 				<section>
 					<h2>Our first test</h2>
-					<p>The first test should test whether the method exists, and it doesn't crash the app when used. If the code we are testing is a component, we would check whether the component can render without crashing.</p>
-					<p>Now we have our test, because we don't have the code yet, the test should fail. We should be able to write an empty method, and this test should pass.</p>
+					<p>
+						The first test should test whether the method exists, and it doesn't crash the app when used.
+						If the code we are testing is a component, we would check whether the component can render without crashing.
+					</p>
+					<p class="fragment">
+						Code: The test should fail because we do not have the code yet. We should be able to write an empty method,
+						and this test should pass. If you already wrote the empty method, comment it out and the test should fail.
+					</p>
 				</section>
+
 				<section>
 					<h2>Our second test</h2>
-					<p>The second test should test the first requirement, which is: If the number is between 0 and 29, return 'right'.</p>
-					<p>We would write the code to pass this test. The simplest way to pass this test is to return the hardcoded value 'right'. We don't need to do anything with the number yet.</p>
+					<p>The second test should test the first requirement, Which is: If the number is 0, return 'right'.</p>
+					<p class="fragment">
+						Code: We would write the code to pass this test. The simplest way to pass this test is to return the
+						hardcoded value 'right'. We don't need to do anything with the number yet.
+					</p>
 				</section>
+
 				<section>
 					<h2>Our third test</h2>
-					<p>The third test should test the following requirement: If the number is between 30 and 59, return 'left'.</p>
-					<p>If we tried to change the hardcoded value to 'left', the first test would now fail. So, we now need to check the number to see if the number is less than 30. If so, return 'right', otherwise 'left'</p>
+					<p>The third test should test the following requirement: If the number is 30, return 'left'.</p>
+					<p class="fragment">
+						Code: Our code needs to be a little bit more clever. If we tried to change the hardcoded value to 'left',
+						the first test would now fail. So, we now need to check the number to see if the number is 0. If so,
+						return 'right'. Otherwise, return 'left'
+					</p>
 				</section>
+
 				<section>
 					<h2>Testing the bounds.</h2>
-					<p>We need to check our boundaries. Write tests to see what happens at the number 0, 29, 30 and 59.</p>
-					<p>If these tests already pass, make sure to comment out code to break them. we want to make sure that the tests are testing what you think they are.</p>
+					<p>
+						We need to check our boundaries. Write tests to return 'right' if the number is 29,
+						'left' if the number is 59.
+					</p>
+					<p class="fragment">
+						If these tests already pass, make sure to comment out code to break them. We want to make
+						sure that the tests are testing what you think they are.
+					</p>
 				</section>
+
 				<section>
-					<h2>Testing false values.</h2>
+						<h2>Testing inside the bounds.</h2>
+						<p>
+							We need to test a few numbers between 0 and 29 to make sure that they return 'right'.
+							Also test a few numbers between 30 and 59 to see if they return 'left'.
+						</p>
+						<p class="fragment">
+							This is where we should be writing code that checks whether the value of the number
+							is within a range, rather than checking for values explicitly. Keep your other tests
+							running to make sure we don't break previous requirements.
+						</p>
+						<p class="fragment">
+							If these tests already pass, make sure to comment out code to break them.
+							We want to make sure that the tests are testing what you think they are.
+						</p>
+					</section>
+
+				<section>
+					<h2>Testing unexpected values.</h2>
 					<p>Write a few tests to return null when the number is less than 0 or greater than 59.</p>
-					<p>Either write the code to pass the tests, or if the tests are passing, comment out your code until it breaks as expected.</p>
+					<p class="fragment">
+						Either write the code to pass the tests, or if the tests are passing,
+						comment out your code until it breaks as expected.
+					</p>
 				</section>
 			</div>
 		</div>
