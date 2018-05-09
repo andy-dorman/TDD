@@ -162,44 +162,50 @@
 				<section>
 					<h2>The Third Test</h2>
 					<p>The third test should test the following requirement:</p>
+					<p>If the number is 29, return 'right'.</p>
+					<p class="fragment">
+						The code already written should pass this test. change the return value from 'right' to 'left' and see both tests fail.
+					</p>
+				</section>
+
+				<section>
+					<h2>The Fourth Test</h2>
+					<p>The fourth test should test the following requirement:</p>
 					<p>If the number is 30, return 'left'.</p>
 					<p class="fragment">
 						Our code needs to be a little bit more clever. If we tried to change the hardcoded value to 'left',
-						the first test would now fail.
+						the first and second tests would fail.
 					</p>
 					<p class="fragment">
 						There are a few ways to write this code, but aim for the simplest way you can think of to make the test pass.
-						One way to write this code is to chick if the number is 0. If so, return 'right', otherwise, return 'left'.
+						One way to write this code is to chick if the number is 30. If so, return 'left', otherwise, return 'right'.
 					</p>
 				</section>
 
 				<section>
-					<h2>Testing the boundaries.</h2>
+					<h2>The Fifth Test</h2>
+					<p>The fifth test should test the following requirement:</p>
+					<p>If the number is 59, return 'left'.</p>
+					<p class="fragment">We can make this test pass by expanding the if statement to also check for 59.</p>
+				</section>
+
+				<section>
+					<h2>Testing inside the bounds.</h2>
 					<p>
-						Write tests to return 'right' if the number is 29, 'left' if the number is 59.
+						We have tested the boundaries of the requirements, but we now need to test inside the boundaries.
+						Test a few numbers between 0 and 29 to see if they return 'right'.
+						Test a few numbers between 30 and 59 to see if they return 'left'.
 					</p>
 					<p class="fragment">
-						If these tests already pass, make sure to comment out code to break them. We want to make
-						sure that the tests are testing what you think they are.
+						We should be checking whether the number is within a range at this point, rather than
+						checking for values explicitly. Keep your other tests running to make sure we don't
+						break previous requirements.
+					</p>
+					<p class="fragment">
+						Again, if these tests pass before you write more code, comment out code to break them.
+						We want to make sure that the tests are testing what you think they are testing.
 					</p>
 				</section>
-
-				<section>
-						<h2>Testing inside the bounds.</h2>
-						<p>
-							We need to test a few numbers between 0 and 29 to make sure that they return 'right'.
-							Also test a few numbers between 30 and 59 to see if they return 'left'.
-						</p>
-						<p class="fragment">
-							We should be checking whether the number is within a range at this point,  rather than
-							checking for values explicitly. Keep your other tests running to make sure we don't
-							break previous requirements.
-						</p>
-						<p class="fragment">
-							Again, if these tests pass before you write more code, comment out code to break them.
-							We want to make sure that the tests are testing what you think they are testing.
-						</p>
-					</section>
 
 				<section>
 					<h2>Testing values outside the bounds.</h2>
