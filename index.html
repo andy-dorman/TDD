@@ -128,9 +128,9 @@
 					<h2>Requirements</h2>
 					<div>We want a method called buffalo that takes a number between 0 and 59, and returns either the word 'right' or 'left' depending on the number's value</div>
 					<ul>
-						<li class="fragment">If the number is between 0 and 29, return 'right'</li>
-						<li class="fragment">If the number is between 30 and 59, return 'left'</li>
-						<li class="fragment">If the number is less than 0 or greater than 59, return null</li>
+						<li class="fragment">If the number is between 0 and 29, return 'right'.</li>
+						<li class="fragment">If the number is between 30 and 59, return 'left'.</li>
+						<li class="fragment">If the number is less than 0 or greater than 59, return null.</li>
 					</ul>
 				</section>
 
@@ -166,8 +166,10 @@
 					<p>If the number is 30, return 'left'.</p>
 					<p class="fragment">
 						Our code needs to be a little bit more clever. If we tried to change the hardcoded value to 'left',
-						the first test would now fail. So, we now need to check the number to see if the number is 0. If so,
-						return 'right'. Otherwise, return 'left'
+						the first test would now fail.
+					</p>
+					<p class="fragment">
+						One way to write this code is to chick if the number is 0. If so, return 'right', otherwise, return 'left'.
 					</p>
 				</section>
 
@@ -190,13 +192,13 @@
 							Also test a few numbers between 30 and 59 to see if they return 'left'.
 						</p>
 						<p class="fragment">
-							This is where we should be writing code that checks whether the value of the number
-							is within a range, rather than checking for values explicitly. Keep your other tests
-							running to make sure we don't break previous requirements.
+							We should be checking whether the number is within a range at this point,  rather than
+							checking for values explicitly. Keep your other tests running to make sure we don't
+							break previous requirements.
 						</p>
 						<p class="fragment">
-							If these tests already pass, make sure to comment out code to break them.
-							We want to make sure that the tests are testing what you think they are.
+							Again, if these tests pass before you write more code, comment out code to break them.
+							We want to make sure that the tests are testing what you think they are testing.
 						</p>
 					</section>
 
