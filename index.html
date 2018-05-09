@@ -45,7 +45,7 @@
 						<li class="fragment">By the end of analysis the tickets should have unambiguous requirements.</li>
 						<li class="fragment">Tests should cover the requirements of the ticket and not assumptions of the developer.</li>
 						<li class="fragment">After the tests are written, if the ticket needs to go back to next, another developer could write the code to fix the tests, and pass all requirements of the ticket.</li>
-						<li class="fragment">The tests will explain our thought process, will aid clarity to other members of the team.</li>
+						<li class="fragment">The tests will explain the developer's thought process, which will aid clarity to other members of the team.</li>
 					</ul>
 				</section>
 
@@ -53,9 +53,9 @@
 					<h2>More Benefits</h2>
 					<ul>
 						<li>QA can be involved from the start of the ticket, to catch areas the Devs have missed.</li>
-						<li class="fragment">Less feature creep. If a dev feels the need to add more tests after analysis, we should be checking whether the extra work is out of scope.</li>
-						<li class="fragment">For QAs: We get evidence that the requirements for a ticket are tested and fulfilled.</li>
-						<li class="fragment">Communication between ticket owner, dev and QA throughout the life of the ticket.</li>
+						<li class="fragment">Less feature creep. If a Dev feels the need to add more tests after analysis, they should check whether the extra work is out of scope.</li>
+						<li class="fragment">QAs get evidence that the requirements for a ticket are tested and fulfilled.</li>
+						<li class="fragment">Communication between Ticket Owner, Dev and QA throughout the life of the ticket.</li>
 					</ul>
 				</section>
 
@@ -76,9 +76,9 @@
 				<section>
 					<h2>Analysis</h2>
 					<ul>
-						<li>If you don't think that a requirement can be easily translated into a test, rewrite it until it can be.</li>
-						<li class="fragment">If you have added more requirements, get agreement that the requirements you have added are in scope. If not in scope, a new ticket is needed.</li>
-						<li class="fragment">Check with the team to make sure your requirements and tests cover all they need to, before entering the development phase of the ticket.</li>
+						<li>If a requirement cannot be easily translated into a test, rewrite it until it can be.</li>
+						<li class="fragment">If more requirements have been added, get agreement that the new requirements are in scope. It could be that a new ticket is needed.</li>
+						<li class="fragment">Check with the team to make sure requirements and tests cover all they need to before entering the development phase of the ticket.</li>
 						<li class="fragment">Use analysis as a requirement and test review stage.</li>
 					</ul>
 				</section>
@@ -86,12 +86,12 @@
 				<section>
 					<h2>Writing tests</h2>
 					<ul>
-						<li>You should write your tests during the analysis stage.</li>
+						<li>Write tests during the analysis stage.</li>
 						<li class="fragment">Start small.</li>
 						<li class="fragment">Test iteratively.</li>
 						<li class="fragment">Tests should follow logically from the previous tests.</li>
-						<li class="fragment">Only write tests that help you meet the requirements.</li>
-						<li class="fragment">Write the tests before writing any code.</li>
+						<li class="fragment">Only write tests that help meet the requirements.</li>
+						<li class="fragment">Write the tests before writing code.</li>
 						<li class="fragment">Write tests that fail, and then write code to make the tests pass.</li>
 					</ul>
 				</section>
@@ -100,33 +100,32 @@
 					<h2>Writing code</h2>
 					<ul>
 						<li>Only write code that fixes tests.</li>
-						<li class="fragment">If code isn't relevant to a test you have written, it is out of scope or needs a test.</li>
-						<li class="fragment">Fix tests in the most simple way possible.</li>
-						<li class="fragment">By simplest way possible, that includes hardcoding the expected result.</li>
-						<li class="fragment">If you see hardcoded results in your final code it means you have not tested hard enough.</li>
-						<li class="fragment">When you are fixing the tests, focus on fixing one test at a time.</li>
-						<li class="fragment">Keep previous tests running when you are fixing a new test.</li>
+						<li class="fragment">If code isn't relevant to a test, it needs a test or is out of scope.</li>
+						<li class="fragment">Fix tests in the most simple way possible, including writing hardcoded results.</li>
+						<li class="fragment">If hardcoded results are in the final code it means the code has not been tested hard enough.</li>
+						<li class="fragment">When fixing the tests, focus on fixing one test at a time.</li>
+						<li class="fragment">Keep previous tests running when fixing a new test.</li>
 					</ul>
 				</section>
 
 				<section>
 					<h2>Merge Requests</h2>
-					<p>Now we have all the requirements with passing tests, now is the time to see if our code can be improved. Our existing merge request process already works well for this, so I'm moving on.</p>
+					<p>Now all the requirements have passing tests, now is the time to see if the code can be improved. The merge request process already works well for this.</p>
 				</section>
 
 				<section>
 					<h1>Example</h1>
 					<p>We are writing code to help people play a game called Buffalo. The rules:</p>
 					<ul>
-						<li class="fragment">Imagine an analogue clock. If the minute hand is on the right hand side of the clock, between 0 and 29 minutes, drink with your right hand.</li>
-						<li class="fragment">If the minute hand of the analogue clock is on the left side, between 30 - 59 minutes, drink with your left hand.</li>
-						<li class="fragment">If you are caught drinking with the wrong hand, bad things happen.</li>
+						<li class="fragment">If the minute hand of an analogue clock is on the right, between 0 and 29 minutes, drink with your right hand.</li>
+						<li class="fragment">If the minute hand of an analogue clock is on the left, between 30 and 59 minutes, drink with your left hand.</li>
+						<li class="fragment">If a player is caught drinking with the wrong hand, bad things happen.</li>
 					</ul>
 				</section>
 
 				<section>
 					<h2>Requirements</h2>
-					<div>We want a method called buffalo that takes a number between 0 and 59, and returns either the word 'right' or 'left' depending on the number's value</div>
+					<div>We want a method called buffalo that takes a number between 0 and 59, and returns either the word 'right' or 'left' depending on the number's value.</div>
 					<ul>
 						<li class="fragment">If the number is between 0 and 29, return 'right'.</li>
 						<li class="fragment">If the number is between 30 and 59, return 'left'.</li>
@@ -140,7 +139,7 @@
 						The first test should test whether the method exists, and it doesn't crash the app when used.
 					</p>
 					<p class="fragment">
-						If the code we are testing is a component, we would check whether the component can render without crashing.
+						If the code is a component, we would check whether the component can render without crashing.
 					</p>
 					<p class="fragment">
 						The test should fail to begin with, because we do not have any code to test yet.
