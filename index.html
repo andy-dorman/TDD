@@ -145,7 +145,6 @@
 					<p class="fragment">
 						The test should fail to begin with, because we do not have any code to test yet.
 						We should be able to write an empty function, and this test should pass.
-						If you wrote the function already, comment it out to make sure the test fails when you expect it to fail.
 					</p>
 				</section>
 
@@ -156,7 +155,7 @@
 
 					<p class="fragment">
 						The simplest way to pass this test is to return the hardcoded value 'right'.
-						There is no need to do anything with the number yet as nothing else is using it.
+						There is no need to do anything with the number yet as this causes the test to pass.
 					</p>
 				</section>
 
@@ -165,7 +164,9 @@
 					<p>The third test should test the following requirement:</p>
 					<p>If the number is 29, return 'right'.</p>
 					<p class="fragment">
-						The code already written should pass this test. change the return value from 'right' to 'left' and see both tests fail.
+						The code already written should pass this test.
+						To make sure that the test is testing what we think it is testing,
+						Change the return value from 'right' to 'left' and see both tests fail.
 					</p>
 				</section>
 
