@@ -65,28 +65,48 @@
 				<section>
 					<h2>Analysis</h2>
 					<ul>
-						<li>If the ticket has some ambiguity, check whether the ticket is ready. If it is, remove all ambiguity during analysis.</li>
+						<li>If the ticket has some ambiguity, it could be that the ticket has not met our definition of ready. If the ambiguity is an implementation detail, remove all ambiguity during the analysis phase.</li>
 						<li class="fragment">If the ticket doesn't have a set of requirements in the description, add them.</li>
 						<li class="fragment">Make sure that the requirements include different scenarios if needed.</li>
-						<li class="fragment">If you don't think that a requirement can be easily translated into a unit test, rewrite it.</li>
+						<li class="fragment">If you don't think that a requirement can be easily translated into a test, rewrite it until it can be. Make sure with the team that your rewrite covers all it needs to.</li>
 						<li class="fragment">If you have added more requirements, get agreement that the requirements you have added are in scope. If not in scope, a new ticket is needed.</li>
+						<li class="fragment">Check with the team to make sure your requirements and tests cover all they need to, before entering the development phase of the ticket.</li>
+						<li class="fragment">Use analysis as a code review stage for the requirements and the tests.</li>
 					</ul>
 				</section>
 
 				<section>
 					<h2>Writing tests</h2>
 					<ul>
-						<li>Start small.</li>
+						<li>You should be writing your tests during the analysis stage.</li>
+						<li class="fragment">Start small.</li>
+						<li class="fragment">Test iteratively.</li>
+						<li class="fragment">Make sure that one test follows logically from the tests before.</li>
 						<li class="fragment">Only write tests that help you meet the agreed requirements.</li>
 						<li class="fragment">Write the tests before writing any code.</li>
 						<li class="fragment">Write tests that fail, and then write code to make the tests pass.</li>
 						<li class="fragment">It's okay to have lots of failing tests before writing any code.</li>
-						<li class="fragment">When you are fixing the tests, focus on fixing one test at a time. Keep previous tests running when you are fixing a new test.</li>
 					</ul>
 				</section>
 
 				<section>
-					<h1>Example: Buffalo</h1>
+					<h2>Writing code</h2>
+					<ul>
+						<li>Only write code that fixes tests. If code isn't relevant to a test you have written, it is out of scope, or is needs a test.</li>
+						<li class="fragment">Fix tests in the most simple way possible.</li>
+						<li class="fragment">By simplest way possible, that includes hardcoding the expected result. If you see hardcoded results in your final code it means you have not tested hard enough.</li>
+						<li class="fragment">When you are fixing the tests, focus on fixing one test at a time.</li>
+						<li class="fragment">Keep previous tests running when you are fixing a new test.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Merge Requests</h2>
+					<p>Now we have all the requirements with passing tests, now is the time to see if our code can be improved. Our existing merge request process already works well for this, so I'm moving on.</p>
+				</section>
+
+				<section>
+					<h1>Example</h1>
 					<p>We are writing code to help people play a drinking game called Buffalo. The rules:</p>
 					<ul>
 						<li class="fragment">Imagine an analogue clock. If the minute hand is on the right hand side of the clock, between 0 and 29 minutes, drink with your right hand.</li>
