@@ -138,17 +138,25 @@
 					<h2>Our first test</h2>
 					<p>
 						The first test should test whether the method exists, and it doesn't crash the app when used.
+					</p>
+					<p class="fragment">
 						If the code we are testing is a component, we would check whether the component can render without crashing.
 					</p>
 					<p class="fragment">
-						Code: The test should fail because we do not have the code yet. We should be able to write an empty method,
-						and this test should pass. If you already wrote the empty method, comment it out and the test should fail.
+						The test should fail to begin with, because we do not have any code to test yet.
+						We should be able to write an empty method, and this test should pass.
+						If you wrote the method already, comment it out to make sure the test fails when you expect it to fail.
 					</p>
 				</section>
 
 				<section>
 					<h2>Our second test</h2>
-					<p>The second test should test the first requirement, Which is: If the number is 0, return 'right'.</p>
+					<p>The second test should test the first requirement, Which is:
+						<ul>
+							<li>If the number is 0, return 'right'.</li>
+						</ul>
+					</p>
+
 					<p class="fragment">
 						Code: We would write the code to pass this test. The simplest way to pass this test is to return the
 						hardcoded value 'right'. We don't need to do anything with the number yet.
