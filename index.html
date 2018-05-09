@@ -92,7 +92,8 @@
 						<li class="fragment">Tests should follow logically from the previous tests.</li>
 						<li class="fragment">Only write tests that help meet the requirements.</li>
 						<li class="fragment">Write the tests before writing code.</li>
-						<li class="fragment">Write tests that fail, and then write code to make the tests pass.</li>
+						<li class="fragment">If the test fails before writing your code, this means that you are testing the right thing.</li>
+						<li class="fragment">If the test already passes before you write any code because previous code covers your test, break your code to make sure that the test fails as expected. Fix your code again afterwards.</li>
 					</ul>
 				</section>
 
@@ -101,24 +102,24 @@
 					<ul>
 						<li>Only write code that fixes tests.</li>
 						<li class="fragment">If code isn't relevant to a test, it needs a test or is out of scope.</li>
-						<li class="fragment">Fix tests in the most simple way possible, including writing hardcoded results.</li>
-						<li class="fragment">If hardcoded results are in the final code it means the code has not been tested hard enough.</li>
-						<li class="fragment">When fixing the tests, focus on fixing one test at a time.</li>
-						<li class="fragment">Keep previous tests running when fixing a new test.</li>
+						<li class="fragment">Fix tests in the most simple way possible.</li>
+						<li class="fragment">Fix one test at a time.</li>
+						<li class="fragment">Keep previous tests running when fixing a new test to stop you breaking previous functionality.</li>
 					</ul>
 				</section>
 
 				<section>
 					<h2>Merge Requests</h2>
-					<p>Now all the requirements have passing tests, now is the time to see if the code can be improved. The merge request process already works well for this.</p>
+					<p>Now all the requirements have passing tests, check to see if the code ban be improved. After you are happy, ask your favourite code enforcer to check your work.</p>
 				</section>
 
+				<section><h1>Example</h1></section>
+
 				<section>
-					<h1>Example</h1>
 					<p>We are writing code to help people play a game called Buffalo. The rules:</p>
 					<ul>
-						<li class="fragment">If the minute hand of an analog clock is on the right, between 0 and 29 minutes, drink with your right hand.</li>
-						<li class="fragment">If the minute hand of an analog clock is on the left, between 30 and 59 minutes, drink with your left hand.</li>
+						<li class="fragment">If the minute hand of a clock is on the right, between 0 and 29 minutes, drink with your right hand.</li>
+						<li class="fragment">If the minute hand of a clock is on the left, between 30 and 59 minutes, drink with your left hand.</li>
 						<li class="fragment">If a player is caught drinking with the wrong hand, bad things happen.</li>
 					</ul>
 				</section>
